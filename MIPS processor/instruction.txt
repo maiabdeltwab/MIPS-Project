@@ -1,0 +1,9 @@
+start	xori  $s0 , $zero , 0x0003
+	xori  $s1 , $zero , 0x0004
+	j     next1
+next2   xori  $s0 , $zero , 0x0001
+	sub   $s2 , $s1   , $s0
+	j     next3
+next1   sub   $s2 , $s1   , $s0
+	bne   $s0 , $s1   , next2
+next3	add   $s3 , $s0   , $s1
